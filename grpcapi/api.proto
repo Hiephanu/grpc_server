@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+message UserPostRequest {
+    string name = 1;
+    int32 age =2;
+}
+
+message UserPostResponse {
+    int32 id = 1;
+    string name =2;
+    int32 age =3;
+}
+
+message UserRespose {
+    int32 id =1;
+    string name =2;
+    int32 age =3; 
+}
+service User {
+    rpc Post(UserPostRequest) returns (UserPostResponse)
+    rpc Get() returns (UserRespose)
+}

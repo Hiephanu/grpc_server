@@ -1,0 +1,14 @@
+version: '1.0'
+
+services:
+  mysql:
+    image: mysql:8.0.13
+    container_name: mysql
+    privileged: true
+    ports:
+      - "3307:3306"
+    restart: always
+    environment:
+      MYSQL_DATABASE: go_db
+      MYSQL_ROOT_PASSWORD: "#doanvanhiep"
+    command: --character-set-server=utf8 --collation-server=utf8_general_ci
